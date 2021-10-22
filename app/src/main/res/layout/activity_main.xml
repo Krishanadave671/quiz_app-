@@ -17,8 +17,8 @@
 
         <TextView
             android:id="@+id/correcttextview"
-            android:layout_width="197dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="correct : "
             android:textSize="30sp"
             android:layout_margin="5dp"
@@ -43,45 +43,46 @@
     </LinearLayout>
 
 
-
-
     <LinearLayout
         android:id="@+id/Questionlayout"
-        android:layout_width="413dp"
-        android:layout_height="147dp"
-        android:layout_marginTop="50dp"
-        android:background="#342157"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/curve"
         android:orientation="horizontal"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/questionno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="2dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+
+
+            />
 
         <TextView
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_margin="20dp"
-
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/muli_extralight"
             android:text="what is the name of company"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
-<TextView
-            android:id="@+id/questionno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_margin="20dp"
 
-            android:fontFamily="@font/muli_extralight"
-            android:text="what is the name of company"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+
 
 
     </LinearLayout>
@@ -94,7 +95,7 @@
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/Questionlayout">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/option_A"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -106,9 +107,9 @@
             android:textSize="24sp"
             app:cornerRadius="20dp">
 
-        </Button>
+        </com.google.android.material.button.MaterialButton>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/option_B"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -120,9 +121,9 @@
             android:textSize="24sp"
             app:cornerRadius="20dp">
 
-        </Button>
+        </com.google.android.material.button.MaterialButton>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/option_C"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -134,9 +135,9 @@
             android:textSize="24sp"
             app:cornerRadius="20dp">
 
-        </Button>
+        </com.google.android.material.button.MaterialButton>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/option_D"
             android:layout_width="match_parent"
             android:layout_height="70dp"
@@ -148,7 +149,7 @@
             android:textSize="24sp"
             app:cornerRadius="20dp">
 
-        </Button>
+        </com.google.android.material.button.MaterialButton>
 
 
     </LinearLayout>

@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Locale;
 import java.util.Random;
 
@@ -35,7 +37,12 @@ public class MainActivity extends AppCompatActivity {
         random = new Random();
         quizArraylist = new ArrayList<>();
         getquizquestion(quizArraylist);
-        currentPos = random.nextInt(quizArraylist.size());
+        Collections.shuffle(quizArraylist);
+        currentPos = 0;
+        if(questionAttempted == quizArraylist.size()){
+            System.exit(0);
+        }
+
         setDataToViews(currentPos);
 
         option1.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 questionAttempted++;
-                currentPos = random.nextInt(quizArraylist.size());
+                currentPos ++;
                 setDataToViews(currentPos);
             }
         });
@@ -70,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 questionAttempted++;
-                currentPos = random.nextInt(quizArraylist.size());
+                currentPos++;
                 setDataToViews(currentPos);
             }
         });
@@ -88,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 questionAttempted++;
-                currentPos = random.nextInt(quizArraylist.size());
+                currentPos ++;
                 setDataToViews(currentPos);
             }
         });
@@ -106,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 questionAttempted++;
-                currentPos = random.nextInt(quizArraylist.size());
+                currentPos++;
                 setDataToViews(currentPos);
 
             }
@@ -124,11 +131,9 @@ public class MainActivity extends AppCompatActivity {
            questionnotv.setText(questionAttempted + " ");
            Incorrect.setText("Incorrect : " + incorrect);
            correct.setText("Correct : " + currentscore);
-           if(questionAttempted == 5){
 
-           }
 
-          else {
+           {
                 questiontv.setText(quizArraylist.get(currentPos).getQuestions());
                 option1.setText(quizArraylist.get(currentPos).getOptions1());
                 option2.setText(quizArraylist.get(currentPos).getOptions2());
@@ -156,6 +161,6 @@ public class MainActivity extends AppCompatActivity {
         quizArraylist.add(new Quizmodel("Which of the following property changes the width of left border?", "marker-offset", "list-style-position", "list-style-image", "list-style","list-style-image"));
         quizArraylist.add(new Quizmodel(" How to you modify a border image using CSS3?", "marker-offset", "list-style-position", "list-style-image", "list-style","list-style-image"));
         quizArraylist.add(new Quizmodel("Which of the following property is used to create a small-caps effect?", "marker-offset", "list-style-position", "list-style-image", "list-style","list-style-image"));
-        quizArraylist.add(new Quizmodel("Which of the following property specifies the distance between a marker and the text in the list?", "marker-offset", "list-style-position", "list-style-image", "list-style","list-style-image"));
+        quizArraylist.add(new Quizmodel("Which of the following property specifies the distance  a marker and the text in the list?", "marker-offset", "list-style-position", "list-style-image", "list-style","list-style-image"));
     }
 }
